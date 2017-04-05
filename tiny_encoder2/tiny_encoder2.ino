@@ -21,7 +21,7 @@ void loop()
   while (mySerial.available()) {
     uint8_t inc=mySerial.read();
     if ( inc == 'b') 
-      mySerial.println(encoderValue, DEC);
+      mySerial.write(encoderValue, DEC);
   }
   encoded = (digitalRead(0) << 1) | digitalRead(1); 
   sum  = (lastEncoded << 2) | encoded;
